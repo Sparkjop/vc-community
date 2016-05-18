@@ -86,7 +86,7 @@
             "superscript_decimals": true,
             "store_selector_enable": true,
             //Display all prices and totals with including tax
-            "show_prices_with_taxes": false
+            "show_prices_with_taxes": true
         },
         "Soft Green": {
             "ajax_cart_enable": true,
