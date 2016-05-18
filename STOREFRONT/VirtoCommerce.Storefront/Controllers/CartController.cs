@@ -106,6 +106,14 @@ namespace VirtoCommerce.Storefront.Controllers
                 return HttpNotFound();
             }
 
+            var klarnaDynamicProperty = order.InPayments.FirstOrDefault()
+                .DynamicProperties.FirstOrDefault(d => d.Name == "KlarnaConfirmationSnippet");
+            if (klarnaDynamicProperty != null && klarnaDynamicProperty.Values.Count > 0)
+            {
+                var snippet = klarnaDynamicProperty.Values.FirstOrDefault().Value;
+                Response.Write(snippet);
+            }                
+
             WorkContext.CurrentOrder = order.ToWebModel(WorkContext.AllCurrencies, WorkContext.CurrentLanguage);
 
             return View("thanks", WorkContext);

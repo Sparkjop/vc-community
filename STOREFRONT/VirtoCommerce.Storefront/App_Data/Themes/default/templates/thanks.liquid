@@ -1,5 +1,12 @@
 ﻿<h1>Thank you!</h1>
 <h4>{{ 'customer.order.title' | t: name: order.name }}</h4>
+<div id="klarnatarget"></div>
+<script>
+  $(function(){
+  var element = $('#klarnasource').detach();
+  $('#klarnatarget').append(element);
+  })();
+</script>
 <table class="full">
     <thead>
         <tr>
